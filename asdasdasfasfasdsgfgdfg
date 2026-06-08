@@ -1,0 +1,194 @@
+[
+  {
+    "dns": {
+      "fallbackStrategy": "disabledIfAnyMatch",
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "queryStrategy": "UseIP"
+        }
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "0.0.0.0",
+        "port": 10805,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "0.0.0.0",
+        "port": 1080,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": true
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "tag": "%F0%9F%87%AB%F0%9F%87%AE%20%D0%A4%D0%B8%D0%BD%D0%BB%D1%8F%D0%BD%D0%B4%D0%B8%D1%8F%20",
+        "settings": {
+          "vnext": [
+            {
+              "address": "95.164.55.194",
+              "port": 443,
+              "users": [
+                {
+                  "id": "dbdf2786-088f-440d-bc74-7545b916405f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "serviceName": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "tlsSettings": {
+            "serverName": "www.cloudflare.com",
+            "fingerprint": "edge"
+          },
+          "realitySettings": {
+            "publicKey": "MGKWbIse5wfZwDzLCuVOv4_Z_c1D0dBWsSyLQdrpmlo",
+            "shortId": "e8d2a1b4c39f8877",
+            "serverName": "www.cloudflare.com"
+          }
+        },
+        "domainStrategy": "AsIs",
+        "remark": ""
+      }
+    ],
+    "policy": {
+      "levels": {
+        "1": {
+          "connIdle": 30
+        }
+      },
+      "system": {
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
+    },
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "inboundTag": [
+            "dns-out"
+          ],
+          "outboundTag": "dns-out",
+          "type": "field"
+        }
+      ]
+    },
+    "stats": {}
+  },
+{
+    "dns": {
+      "fallbackStrategy": "disabledIfAnyMatch",
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "queryStrategy": "UseIP"
+        }
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "0.0.0.0",
+        "port": 10805,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "0.0.0.0",
+        "port": 1080,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": true
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "tag": "%F0%9F%87%AB%F0%9F%87%AE%20%D0%A4%D0%B8%D0%BD%D0%BB%D1%8F%D0%BD%D0%B4%D0%B8%D1%8F%20",
+        "settings": {
+          "vnext": [
+            {
+              "address": "95.164.55.194",
+              "port": 443,
+              "users": [
+                {
+                  "id": "dbdf2786-088f-440d-bc74-7545b916405f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "serviceName": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "tlsSettings": {
+            "serverName": "www.cloudflare.com",
+            "fingerprint": "edge"
+          },
+          "realitySettings": {
+            "publicKey": "MGKWbIse5wfZwDzLCuVOv4_Z_c1D0dBWsSyLQdrpmlo",
+            "shortId": "e8d2a1b4c39f8877",
+            "serverName": "www.cloudflare.com"
+          }
+        },
+        "domainStrategy": "AsIs",
+        "remark": ""
+      }
+    ],
+    "policy": {
+      "levels": {
+        "1": {
+          "connIdle": 30
+        }
+      },
+      "system": {
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
+    },
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "inboundTag": [
+            "dns-out"
+          ],
+          "outboundTag": "dns-out",
+          "type": "field"
+        }
+      ]
+    },
+    "stats": {}
+  }
+]
